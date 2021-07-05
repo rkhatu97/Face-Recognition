@@ -41,8 +41,9 @@ def face_extractor(img):
 
     return cropped_face
 
-
-video_capture = cv2.VideoCapture(0);
+url = input("Enter URL: ")
+#video_capture = cv2.VideoCapture(0);
+video_capture = cv2.VideoCapture("http://192.168."+url+":8080/video");
 fourcc = cv2.VideoWriter_fourcc(*'MP4V')
 out = cv2.VideoWriter('output.mp4', fourcc, 20.0, (640, 480))
 while True:
